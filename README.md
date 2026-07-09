@@ -1,7 +1,7 @@
 # Extracción de Reglas Interpretables para Scoring Crediticio mediante RuleCOSI+
 
 **Tesis de Maestría — Universidad San Francisco de Quito**
-**Danilo Serrano Hidalgo · Inteligencia de Negocios y Ciencia de Datos**
+**Danilo Fernando Serrano Enríquez · Maestría en Ciencia de Datos**
 
 ---
 
@@ -40,9 +40,13 @@ Un aporte metodológico adicional es la identificación y corrección de una **f
 Tesis Danilo/
 ├── README.md
 ├── .gitignore
-├── tesis_danilo_v2.docx              ← Documento de tesis (incluye figuras)
+├── tesis_danilo_ieee.tex             ← Documento de tesis en formato LaTeX (IEEEtran)
+├── tesis_danilo_overleaf.zip         ← Paquete listo para subir a Overleaf
 │
 ├── docs/
+│   ├── Revision 08_07_2026.docx     ← Versión revisada del documento de tesis
+│   ├── Revision 08_07_2026.pdf      ← Versión PDF de la revisión
+│   ├── tesis_danilo_v2.docx          ← Versión anterior del documento
 │   ├── obregon2023.pdf               ← Paper original de RuleCOSI+
 │   ├── bitacora_proyecto_rulecosi.docx
 │   └── introduction.docx
