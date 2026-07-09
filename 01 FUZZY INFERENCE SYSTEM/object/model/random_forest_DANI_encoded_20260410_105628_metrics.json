@@ -1,0 +1,43 @@
+{
+  "model_type": "RandomForest",
+  "categorical_features_encoded": [
+    "debt_settlement_flag",
+    "grade",
+    "verification_status"
+  ],
+  "threshold_range": [
+    0.4,
+    0.65
+  ],
+  "train_recall": 0.8114677729394688,
+  "train_precision": 0.9500628663616165,
+  "train_f1": 0.8753130727545377,
+  "train_auc": 0.9771710997721441,
+  "train_logloss": 0.14530831431394003,
+  "val_recall": 0.8099133027342984,
+  "val_precision": 0.9482592320411538,
+  "val_f1": 0.8736432304339546,
+  "val_auc": 0.9767022018367699,
+  "val_logloss": 0.14579713582564288,
+  "confusion_matrix": [
+    [
+      830941,
+      8698
+    ],
+    [
+      38447,
+      165481
+    ]
+  ],
+  "optimal_threshold": 0.4,
+  "classification_threshold": 0.4,
+  "model_name": "random_forest_DANI_encoded",
+  "saved_timestamp": "20260410_105628",
+  "saved_date": "2026-04-10 10:56:28",
+  "has_category_mappings": true,
+  "encoded_features": [
+    "debt_settlement_flag",
+    "grade",
+    "verification_status"
+  ]
+}

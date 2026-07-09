@@ -1,0 +1,321 @@
+
+[INFO] ----------------------------------------------------------------------------------------
+FUZZY RULE SYSTEM - FORMATTED FOR PAPER
+----------------------------------------------------------------------------------------------------
+
+System Overview:
+  Total Rules: 717
+  Variables: 12
+  Trees: 25
+
+
+Variables and Linguistic Terms:
+----------------------------------------------------------------------------------------------------
+
+acc_open_past_24mths:
+  - VeryLow: [-12.200, -12.200, 1.499, 7.496]
+  - Low: [-12.200, 1.499, 2.505, 2.505]
+  - MediumLow: [1.499, 2.505, 7.496, 10.501]
+  - Medium: [2.505, 7.496, 10.501, 14.508]
+  - MediumHigh: [10.501, 10.501, 14.508, 30.339]
+  - High: [14.508, 14.508, 30.339, 46.170]
+  - VeryHigh: [10.501, 30.339, 73.200, 73.200]
+
+debt_settlement_flag:
+  - VeryLow: [-0.200, -0.200, 0.285, 0.715]
+  - Low: [-0.200, 0.285, 0.715, 1.200]
+  - High: [0.285, 0.715, 1.200, 1.200]
+
+dti:
+  - VeryLow: [-201.000, -201.000, -1.000, 29.340]
+  - Low: [-201.000, -1.000, 29.340, 999.000]
+  - Medium: [-1.000, 29.340, 999.000, 1199.000]
+  - High: [29.340, 999.000, 1199.000, 1199.000]
+
+fico_range_low:
+  - VeryLow: [563.000, 563.000, 672.500, 697.506]
+  - Low: [563.000, 657.493, 687.496, 687.496]
+  - MediumLow: [672.500, 687.496, 697.506, 727.495]
+  - Medium: [687.496, 697.506, 742.501, 762.500]
+  - MediumHigh: [727.495, 742.501, 762.500, 783.206]
+  - High: [762.500, 762.500, 804.074, 825.015]
+  - VeryHigh: [742.501, 783.206, 892.000, 892.000]
+
+grade:
+  - VeryLow: [-1.200, -1.200, 1.485, 2.500]
+  - Low: [-1.200, 1.485, 2.500, 3.505]
+  - MediumLow: [1.485, 2.500, 3.505, 4.980]
+  - Medium: [2.500, 3.505, 4.980, 5.990]
+  - MediumHigh: [3.505, 4.980, 7.200, 7.200]
+
+last_fico_range_high:
+  - VeryLow: [-170.000, -170.000, 499.000, 556.500]
+  - Low: [-170.000, 0.000, 529.000, 556.500]
+  - MediumLow: [499.000, 529.000, 583.181, 609.000]
+  - Medium: [556.500, 583.181, 609.000, 639.000]
+  - MediumHigh: [609.000, 609.000, 669.000, 699.000]
+  - High: [639.000, 669.000, 729.000, 779.000]
+  - VeryHigh: [639.000, 699.000, 1020.000, 1020.000]
+
+loan_amnt:
+  - VeryLow: [-7400.000, -7400.000, 5600.000, 12000.000]
+  - Low: [500.000, 4000.000, 8662.500, 10000.000]
+  - MediumLow: [5600.000, 8662.500, 14985.824, 17000.000]
+  - Medium: [10000.000, 14985.824, 21575.000, 24000.000]
+  - MediumHigh: [17000.000, 21575.000, 26502.934, 28000.000]
+  - High: [24000.000, 26502.934, 32000.000, 35000.000]
+  - VeryHigh: [21575.000, 28000.000, 47900.000, 47900.000]
+
+mort_acc:
+  - VeryLow: [-10.200, -10.200, 0.500, 1.428]
+  - Low: [-10.200, 0.500, 1.428, 1.428]
+  - MediumLow: [0.500, 1.428, 3.495, 7.507]
+  - Medium: [1.428, 3.495, 7.507, 22.339]
+  - MediumHigh: [7.507, 7.507, 22.339, 37.169]
+  - High: [7.507, 22.339, 61.200, 61.200]
+
+recoveries:
+  - VeryLow: [-8360.650, -8360.650, 0.000, 1859.500]
+  - Low: [-8360.650, 0.000, 1859.500, 50163.900]
+  - High: [0.000, 1859.500, 50163.900, 50163.900]
+
+term_num:
+  - VeryLow: [31.200, 31.200, 42.848, 53.152]
+  - Low: [31.200, 42.848, 53.152, 64.800]
+  - High: [42.848, 53.152, 64.800, 64.800]
+
+total_rec_late_fee:
+  - VeryLow: [-319.704, -319.704, 0.000, 161.955]
+  - Low: [-319.704, 0.000, 161.955, 1598.520]
+  - Medium: [0.000, 161.955, 1598.520, 1918.224]
+  - High: [161.955, 1598.520, 1918.224, 1918.224]
+
+verification_status:
+  - VeryLow: [-0.400, -0.400, 0.285, 0.750]
+  - Low: [-0.400, 0.285, 0.750, 1.250]
+  - MediumLow: [0.285, 0.750, 1.250, 1.715]
+  - Medium: [1.250, 1.715, 2.400, 2.400]
+
+
+Top 20 Rules (by importance):
+----------------------------------------------------------------------------------------------------
+
+Rule 1 (Tree 1, Class 1, Logit +9.126):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (VeryLow OR Low)
+   AND recoveries IS (Low OR High)
+   AND debt_settlement_flag IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND dti IS (Medium OR High)
+THEN Prediction = Bad
+     (Logit contribution: +9.126)
+
+Rule 2 (Tree 1, Class 1, Logit +8.224):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS (Low OR High)
+   AND debt_settlement_flag IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND dti IS (Medium OR High)
+THEN Prediction = Bad
+     (Logit contribution: +8.224)
+
+Rule 3 (Tree 1, Class 1, Logit +5.223):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (VeryLow OR Low)
+   AND recoveries IS VeryLow
+   AND debt_settlement_flag IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND dti IS (Medium OR High)
+THEN Prediction = Bad
+     (Logit contribution: +5.223)
+
+Rule 4 (Tree 1, Class 1, Logit +5.181):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS VeryLow
+   AND debt_settlement_flag IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND dti IS (Medium OR High)
+THEN Prediction = Bad
+     (Logit contribution: +5.181)
+
+Rule 5 (Tree 1, Class 1, Logit +4.885):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (VeryLow OR Low)
+   AND recoveries IS VeryLow
+   AND debt_settlement_flag IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND dti IS (VeryLow OR Low)
+THEN Prediction = Bad
+     (Logit contribution: +4.885)
+
+Rule 6 (Tree 66, Class 0, Logit -4.674):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (High OR VeryHigh)
+   AND fico_range_low IS (MediumHigh OR High OR VeryHigh)
+   AND acc_open_past_24mths IS VeryLow
+   AND grade IS (MediumLow OR Medium OR MediumHigh)
+   AND dti IS (VeryLow OR Low)
+THEN Prediction = Good
+     (Logit contribution: -4.674)
+
+Rule 7 (Tree 1, Class 1, Logit +4.374):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS VeryLow
+   AND debt_settlement_flag IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND dti IS (VeryLow OR Low)
+THEN Prediction = Bad
+     (Logit contribution: +4.374)
+
+Rule 8 (Tree 45, Class 0, Logit -3.711):
+----------------------------------------------------------------------------------------------------
+IF fico_range_low IS VeryLow
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND recoveries IS VeryLow
+   AND last_fico_range_high IS (VeryLow OR Low)
+   AND total_rec_late_fee IS VeryLow
+THEN Prediction = Good
+     (Logit contribution: -3.711)
+
+Rule 9 (Tree 53, Class 1, Logit +3.678):
+----------------------------------------------------------------------------------------------------
+IF loan_amnt IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND total_rec_late_fee IS VeryLow
+   AND fico_range_low IS (High OR VeryHigh)
+   AND last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND dti IS VeryLow
+THEN Prediction = Bad
+     (Logit contribution: +3.678)
+
+Rule 10 (Tree 32, Class 1, Logit +3.566):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND loan_amnt IS VeryLow
+   AND dti IS (Medium OR High)
+   AND recoveries IS VeryLow
+   AND acc_open_past_24mths IS (VeryLow OR Low)
+THEN Prediction = Bad
+     (Logit contribution: +3.566)
+
+Rule 11 (Tree 45, Class 0, Logit -2.943):
+----------------------------------------------------------------------------------------------------
+IF fico_range_low IS VeryLow
+   AND last_fico_range_high IS (Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS VeryLow
+   AND last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND total_rec_late_fee IS VeryLow
+THEN Prediction = Good
+     (Logit contribution: -2.943)
+
+Rule 12 (Tree 9, Class 0, Logit -2.851):
+----------------------------------------------------------------------------------------------------
+IF fico_range_low IS (VeryLow OR Low OR MediumLow OR Medium OR MediumHigh)
+   AND last_fico_range_high IS VeryHigh
+   AND term_num IS (Low OR High)
+   AND grade IS (MediumLow OR Medium OR MediumHigh)
+   AND loan_amnt IS (VeryLow OR Low)
+THEN Prediction = Good
+     (Logit contribution: -2.851)
+
+Rule 13 (Tree 53, Class 1, Logit +2.846):
+----------------------------------------------------------------------------------------------------
+IF loan_amnt IS (VeryLow OR Low)
+   AND total_rec_late_fee IS VeryLow
+   AND fico_range_low IS (VeryLow OR Low OR MediumLow OR Medium OR MediumHigh)
+   AND last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND dti IS (Low OR Medium OR High)
+THEN Prediction = Bad
+     (Logit contribution: +2.846)
+
+Rule 14 (Tree 53, Class 0, Logit -2.713):
+----------------------------------------------------------------------------------------------------
+IF loan_amnt IS (VeryLow OR Low)
+   AND total_rec_late_fee IS (Low OR Medium OR High)
+   AND fico_range_low IS (High OR VeryHigh)
+   AND last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND dti IS (Low OR Medium OR High)
+THEN Prediction = Good
+     (Logit contribution: -2.713)
+
+Rule 15 (Tree 32, Class 1, Logit +2.323):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (VeryLow OR Low)
+   AND loan_amnt IS VeryLow
+   AND dti IS (Medium OR High)
+   AND recoveries IS VeryLow
+   AND acc_open_past_24mths IS (VeryLow OR Low)
+THEN Prediction = Bad
+     (Logit contribution: +2.323)
+
+Rule 16 (Tree 3, Class 1, Logit +2.320):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS (Low OR High)
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND mort_acc IS VeryLow
+   AND loan_amnt IS (VeryLow OR Low OR MediumLow OR Medium OR MediumHigh OR High)
+THEN Prediction = Bad
+     (Logit contribution: +2.320)
+
+Rule 17 (Tree 32, Class 0, Logit -2.299):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (VeryLow OR Low)
+   AND loan_amnt IS VeryLow
+   AND dti IS (Medium OR High)
+   AND recoveries IS VeryLow
+   AND acc_open_past_24mths IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+THEN Prediction = Good
+     (Logit contribution: -2.299)
+
+Rule 18 (Tree 47, Class 0, Logit -2.273):
+----------------------------------------------------------------------------------------------------
+IF dti IS (VeryLow OR Low)
+   AND loan_amnt IS (Low OR MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND last_fico_range_high IS (VeryLow OR Low)
+   AND acc_open_past_24mths IS (VeryLow OR Low OR MediumLow)
+   AND recoveries IS (Low OR High)
+THEN Prediction = Good
+     (Logit contribution: -2.273)
+
+Rule 19 (Tree 3, Class 1, Logit +2.243):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS VeryLow
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND mort_acc IS VeryLow
+   AND loan_amnt IS (VeryLow OR Low OR MediumLow OR Medium OR MediumHigh OR High)
+THEN Prediction = Bad
+     (Logit contribution: +2.243)
+
+Rule 20 (Tree 3, Class 1, Logit +2.229):
+----------------------------------------------------------------------------------------------------
+IF last_fico_range_high IS (MediumLow OR Medium OR MediumHigh OR High OR VeryHigh)
+   AND recoveries IS VeryLow
+   AND last_fico_range_high IS (VeryLow OR Low OR MediumLow)
+   AND mort_acc IS VeryLow
+   AND loan_amnt IS VeryHigh
+THEN Prediction = Bad
+     (Logit contribution: +2.229)
+
+
+
+----------------------------------------------------------------------------------------------------
+LATEX FORMAT (example for 3 rules)
+----------------------------------------------------------------------------------------------------
+
+\begin{table}[h]
+\centering
+\caption{Sample Fuzzy Rules}
+\begin{tabular}{|c|l|c|c|}
+\hline
+Rule & Antecedents & Class & Logit \\
+\hline
+1 & 5 conditions & Bad & +9.126 \\
+2 & 5 conditions & Bad & +8.224 \\
+3 & 5 conditions & Bad & +5.223 \\
+\hline
+\end{tabular}
+\end{table}

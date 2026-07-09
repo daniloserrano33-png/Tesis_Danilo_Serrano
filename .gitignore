@@ -1,0 +1,95 @@
+# ══════════════════════════════════════════════════════════
+#  .gitignore — Tesis Danilo / RuleCOSI+ Credit Scoring
+# ══════════════════════════════════════════════════════════
+
+# ── Datos crudos (demasiado grandes para git) ─────────────
+01\ FUZZY\ INFERENCE\ SYSTEM/data/Loan_status_2007-2020Q3.gzip
+01\ FUZZY\ INFERENCE\ SYSTEM/data/*.csv
+01\ FUZZY\ INFERENCE\ SYSTEM/data/*.gzip
+01\ FUZZY\ INFERENCE\ SYSTEM/data/*.zip
+01\ FUZZY\ INFERENCE\ SYSTEM/data/*.parquet
+
+# ── Modelos entrenados y artefactos serializados ──────────
+01\ FUZZY\ INFERENCE\ SYSTEM/object/pkl/
+01\ FUZZY\ INFERENCE\ SYSTEM/object/model/*.cbm
+01\ FUZZY\ INFERENCE\ SYSTEM/object/model/*.txt
+01\ FUZZY\ INFERENCE\ SYSTEM/object/model/*.pkl
+01\ FUZZY\ INFERENCE\ SYSTEM/object/model/*.parquet
+01\ FUZZY\ INFERENCE\ SYSTEM/object/model/X_train.parquet
+
+# ── Logs de entrenamiento de CatBoost ────────────────────
+01\ FUZZY\ INFERENCE\ SYSTEM/catboost_info/
+
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# ── Entornos virtuales ────────────────────────────────────
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ── Jupyter ───────────────────────────────────────────────
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+# Los notebooks SÍ se suben (son parte del experimento),
+# pero no sus checkpoints ni outputs en caché
+
+# ── Sistemas operativos ───────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── IDEs y editores ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ── Node.js (generador del docx) ─────────────────────────
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# ── Archivos temporales y de log ─────────────────────────
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# ── Conflictos de merge de git ────────────────────────────
+*.orig
+
+# ── Vendor: solo ignorar builds, no el código fuente ─────
+01\ FUZZY\ INFERENCE\ SYSTEM/vendor/rulecosi/*.egg-info/
+01\ FUZZY\ INFERENCE\ SYSTEM/vendor/rulecosi/dist/
+01\ FUZZY\ INFERENCE\ SYSTEM/vendor/rulecosi/build/

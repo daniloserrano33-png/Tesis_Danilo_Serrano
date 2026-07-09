@@ -1,0 +1,54 @@
+{
+  "model_type": "CatBoost",
+  "categorical_features_encoded": [
+    "debt_settlement_flag",
+    "grade",
+    "verification_status"
+  ],
+  "threshold_range": [
+    0.4,
+    0.65
+  ],
+  "train_recall": 0.8476773314951496,
+  "train_precision": 0.9405535484432616,
+  "train_f1": 0.8917035613434182,
+  "train_auc": 0.9818222464157803,
+  "train_logloss": 0.10730479119130527,
+  "val_recall": 0.8428603452140776,
+  "val_precision": 0.9350035746479749,
+  "val_f1": 0.8865441577388409,
+  "val_auc": 0.9803170533445922,
+  "val_logloss": 0.11156492184818943,
+  "confusion_matrix": [
+    [
+      725124,
+      9560
+    ],
+    [
+      27180,
+      151257
+    ]
+  ],
+  "val_confusion_matrix": [
+    [
+      144846,
+      2091
+    ],
+    [
+      5608,
+      30080
+    ]
+  ],
+  "best_iteration": 115,
+  "optimal_threshold": 0.4800000000000001,
+  "classification_threshold": 0.4800000000000001,
+  "model_name": "catboost_DANI_encoded",
+  "saved_timestamp": "20260630_194003",
+  "saved_date": "2026-06-30 19:40:03",
+  "has_category_mappings": true,
+  "encoded_features": [
+    "debt_settlement_flag",
+    "grade",
+    "verification_status"
+  ]
+}

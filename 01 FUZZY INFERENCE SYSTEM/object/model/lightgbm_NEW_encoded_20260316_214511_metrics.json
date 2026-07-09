@@ -1,0 +1,54 @@
+{
+  "model_type": "LightGBM",
+  "categorical_features_encoded": [
+    "debt_settlement_flag",
+    "grade",
+    "verification_status"
+  ],
+  "threshold_range": [
+    0.4,
+    0.65
+  ],
+  "train_recall": 0.8535051586834569,
+  "train_precision": 0.929300911075137,
+  "train_f1": 0.8897918119375333,
+  "train_auc": 0.9815006543491237,
+  "train_logloss": 0.10856907823243171,
+  "val_recall": 0.853059249669818,
+  "val_precision": 0.9284941645317393,
+  "val_f1": 0.8891796664690288,
+  "val_auc": 0.981028940145858,
+  "val_logloss": 0.10926702678243004,
+  "confusion_matrix": [
+    [
+      1032997,
+      16552
+    ],
+    [
+      37343,
+      217567
+    ]
+  ],
+  "val_confusion_matrix": [
+    [
+      309841,
+      5024
+    ],
+    [
+      11237,
+      65236
+    ]
+  ],
+  "best_iteration": 200,
+  "optimal_threshold": 0.44000000000000006,
+  "classification_threshold": 0.44000000000000006,
+  "model_name": "lightgbm_NEW_encoded",
+  "saved_timestamp": "20260316_214511",
+  "saved_date": "2026-03-16 21:45:12",
+  "has_category_mappings": true,
+  "encoded_features": [
+    "debt_settlement_flag",
+    "grade",
+    "verification_status"
+  ]
+}

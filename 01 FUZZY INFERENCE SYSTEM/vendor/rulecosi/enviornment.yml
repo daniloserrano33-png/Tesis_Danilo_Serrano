@@ -1,0 +1,5 @@
+name: rulecosi
+dependencies:
+  - numpy
+  - scipy
+  - scikit-learn
