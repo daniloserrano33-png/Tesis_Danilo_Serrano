@@ -215,6 +215,12 @@ if __name__ == "__main__":
         print(f"[INFO] Condiciones/regla   : {_avg_conds:.2f}")
         print(f"[INFO] REDU                : {_redu:.4f}")
 
+
+        print('\n=== Métricas de las Reglas del modelo seleccionado ===')
+        for i, rule in enumerate(_all_rules):
+            print(f'Regla {i+1}: {rule}')
+
+
         print("\n[INFO] Detalle de reglas extraídas:")
         for _i, _r in enumerate(_all_rules):
             _tag = "  [DEFAULT]" if len(_r.A) == 0 else ""
