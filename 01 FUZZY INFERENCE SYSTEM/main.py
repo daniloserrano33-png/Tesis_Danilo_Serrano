@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     print(f"\n[INFO] Processed DataFrame shape: {df_processed.shape}")
 
-    # ── Paso 1: separar test final (se toca SOLO en la evaluación final) ────────
+    # Separar test final
     X_train, X_test, y_train, y_test = tm.split_data(df_processed, target_col='bad_good', test_size=0.3)
 
     # ── Paso 2: dividir el train en porción Base (70%) y porción COSI (30%) ────
@@ -90,13 +90,13 @@ if __name__ == "__main__":
     )
 
     catboost_model, catboost_metrics = None, None
-    if CATBOOST_AVAILABLE:
-        catboost_model, catboost_metrics, X_train_encoded, cat_mappings = tm.train_catboost_optimized(
-            X_train_base, y_train_base,
-            depth=5,
-            iterations=200,
-            verbose=True,
-            learning_rate=1
+
+    catboost_model, catboost_metrics, X_train_encoded, cat_mappings = tm.train_catboost_optimized(
+        X_train_base, y_train_base,
+        depth=5,
+        iterations=200,
+        verbose=True,
+        learning_rate=1
         )
 
     cb_paths = tm.save_model(
