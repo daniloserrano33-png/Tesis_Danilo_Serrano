@@ -40,48 +40,60 @@ Un aporte metodológico adicional es la identificación y corrección de una **f
 Tesis Danilo/
 ├── README.md
 ├── .gitignore
-├── tesis_danilo_ieee.tex             ← Documento de tesis en formato LaTeX (IEEEtran)
-├── tesis_danilo_overleaf.zip         ← Paquete listo para subir a Overleaf
 │
 ├── docs/
-│   ├── Revision 08_07_2026.docx     ← Versión revisada del documento de tesis
-│   ├── Revision 08_07_2026.pdf      ← Versión PDF de la revisión
-│   ├── tesis_danilo_v2.docx          ← Versión anterior del documento
-│   ├── obregon2023.pdf               ← Paper original de RuleCOSI+
-│   ├── bitacora_proyecto_rulecosi.docx
-│   └── introduction.docx
+│   ├── 00348320_Danilo_Fernando_Serrano_Enríquez_(...).pdf  ← Documento final de tesis
+│   └── Avances y entegas previas/         ← ignorado por git
+│       ├── Revision 08_07_2026.docx
+│       ├── Revision 08_07_2026.pdf
+│       ├── tesis_danilo_v2.docx
+│       ├── obregon2023.pdf                ← Paper original de RuleCOSI+
+│       ├── bitacora_proyecto_rulecosi.docx
+│       └── introduction.docx
 │
-└── 01 FUZZY INFERENCE SYSTEM/        ← Código fuente principal
-    ├── main.py                       ← Pipeline completo (entry point)
-    ├── config.py                     ← Rutas y constantes
+└── 01 FUZZY INFERENCE SYSTEM/             ← Código fuente principal
+    ├── main.py                            ← Pipeline completo (entry point)
+    ├── config.py                          ← Rutas y constantes
+    ├── setup.py
     │
     ├── data/
-    │   └── LCDataDictionary.xlsx     ← Diccionario de variables
+    │   └── LCDataDictionary.xlsx          ← Diccionario de variables
     │   # Loan_status_2007-2020Q3.gzip no se sube a git (>1 GB)
     │
     ├── src/
-    │   ├── loader/data_loader.py     ← Carga y preparación de datos
-    │   ├── preprocess/preprocessing.py  ← Limpieza y selección de features
-    │   ├── model/train_model.py      ← Entrenamiento CatBoost / RF / LightGBM
-    │   ├── model/evaluate_model.py   ← Métricas y evaluación
-    │   ├── fuzzy/fuzzy_inference.py  ← Motor FIS (referencia)
-    │   └── rules/extract_crisp_rules.py ← Extracción de reglas crisp
+    │   ├── loader/data_loader.py          ← Carga y preparación de datos
+    │   ├── preprocess/preprocessing.py    ← Limpieza y selección de features
+    │   ├── model/train_model.py           ← Entrenamiento CatBoost / RF / LightGBM
+    │   ├── model/evaluate_model.py        ← Métricas y evaluación
+    │   ├── fuzzy/fuzzy_inference.py       ← Motor FIS (referencia)
+    │   ├── fuzzy/export_fuzzy_objects.py
+    │   └── rules/extract_crisp_rules.py   ← Extracción de reglas crisp
     │
     ├── notebooks/
     │   ├── Execute Fuzzy Inference.ipynb
     │   └── experiments/
     │       ├── cosi_experimental_grid_v3.ipynb  ← EXPERIMENTO PRINCIPAL
     │       │   # Grid 24 configs · Pareto · 5 reglas finales (sin recoveries)
-    │       ├── barras_nreglas_v3.png    ← Figura 1: reducción de reglas
-    │       ├── heatmap_metricas_v3.png  ← Figura 2: heatmap del grid
-    │       └── pareto_cosi_v3.png       ← Figura 3: frontera de Pareto
+    │       ├── cosi_experimental_grid_v2.ipynb  ← versión anterior
+    │       ├── cosi_experimental_grid.ipynb      ← versión anterior
+    │       ├── Execute_ruele_COSI_pareto_manual*.ipynb  ← exploraciones intermedias
+    │       ├── Execute_ruele_COSI_tr_*.ipynb            ← exploraciones intermedias
+    │       ├── barras_nreglas_v3.png          ← Figura 1: reducción de reglas
+    │       ├── barras_comparativa_v3.png      ← Figura comparativa de métricas
+    │       ├── heatmap_metricas_v3.png        ← Figura 2: heatmap del grid
+    │       └── pareto_cosi_v3.png             ← Figura 3: frontera de Pareto
+    │
+    ├── outputs/
+    │   ├── figures/                       ← Gráficas de funciones de membresía (FIS)
+    │   └── rules/
+    │       └── fuzzy_rules_paper.txt      ← Reglas FIS exportadas
     │
     ├── object/
     │   ├── model/   ← modelos entrenados (.cbm, .txt, .pkl, .parquet)
     │   └── pkl/     ← particiones serializadas (X_train_cosi, X_test, etc.)
     │   # Ambas carpetas están en .gitignore por tamaño
     │
-    └── vendor/rulecosi/              ← RuleCOSI+ (vendoreado, sin modificar)
+    └── vendor/rulecosi/                   ← RuleCOSI+ (vendoreado, sin modificar)
 ```
 
 ---
