@@ -1525,7 +1525,7 @@ def select_top_features_manual(
     """
     selected_features = [
         'last_fico_range_high',
-        'recoveries',
+        'recoveries',  #<---- aquí está el impostor.... Así te quería agarrar puerco!
         'term_num',
         'fico_range_low',
         'total_rec_late_fee',
