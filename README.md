@@ -42,14 +42,7 @@ Tesis Danilo/
 ├── .gitignore
 │
 ├── docs/
-│   ├── 00348320_Danilo_Fernando_Serrano_Enríquez_(...).pdf  ← Documento final de tesis
-│   └── Avances y entegas previas/         ← ignorado por git
-│       ├── Revision 08_07_2026.docx
-│       ├── Revision 08_07_2026.pdf
-│       ├── tesis_danilo_v2.docx
-│       ├── obregon2023.pdf                ← Paper original de RuleCOSI+
-│       ├── bitacora_proyecto_rulecosi.docx
-│       └── introduction.docx
+│   └── 00348320_Danilo_Fernando_Serrano_Enríquez_(...).pdf  ← Documento final de tesis
 │
 └── 01 FUZZY INFERENCE SYSTEM/             ← Código fuente principal
     ├── main.py                            ← Pipeline completo (entry point)
