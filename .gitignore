@@ -52,8 +52,7 @@ venv.bak/
 # ── Jupyter ───────────────────────────────────────────────
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
-# Los notebooks SÍ se suben (son parte del experimento),
-# pero no sus checkpoints ni outputs en caché
+
 
 # ── Sistemas operativos ───────────────────────────────────
 .DS_Store
@@ -89,7 +88,11 @@ package-lock.json
 # ── Conflictos de merge de git ────────────────────────────
 *.orig
 
+# ── Avances y entregas previas ───────────────────────────
+Avances\ y\ entegas\ previas/
+
 # ── Vendor: solo ignorar builds, no el código fuente ─────
 01\ FUZZY\ INFERENCE\ SYSTEM/vendor/rulecosi/*.egg-info/
 01\ FUZZY\ INFERENCE\ SYSTEM/vendor/rulecosi/dist/
 01\ FUZZY\ INFERENCE\ SYSTEM/vendor/rulecosi/build/
+
